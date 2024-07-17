@@ -6,6 +6,9 @@ import About from "./pages/About";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Contact from "./pages/Contact";
 import Events from "./pages/Events";
+import Tarang from "./pages/Tarang";
+import Register from "./pages/Register";
+import TarangEvents from "./pages/TarangEvents";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +27,18 @@ const router = createBrowserRouter([
     path: "/event",
     element: <Events />,
   },
+  {
+    path: "/tarang",
+    element: <Tarang />,
+  },
+  {
+    path: "/tarang/register",
+    element: <Register />
+  },
+  {
+    path: "/tarang/events",
+    element: <TarangEvents />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
