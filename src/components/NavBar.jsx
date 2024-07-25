@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import LogoLink from "./LogoLink"
 
 const navMenuOpen = <FontAwesomeIcon icon={faBars} />
 const navMenuClose = <FontAwesomeIcon icon={faX} />
@@ -16,12 +17,14 @@ function NavBar(){
     }  
     
     return (
-        <nav className="sticky top-0 mx-auto z-40 w-full border-gray-500 p-8">
+        <>
+        
+        <nav className="sticky top-0 mx-auto z-40 w-full border-gray-500 p-8 bg-black">
             
             {/* Main Nav */}
             <div className="flex items-center justify-between">
                 <div className="text-white text-2xl font-bold"> 
-                    <Link to="/"><img src="src/assets/main-design.webp" className="h-16"/></Link>
+                    <LogoLink />
                 </div>
                 <ul className="hidden md:flex space-x-4">
                     <li><Link to="/event" className="text-white">Events</Link></li>
@@ -45,8 +48,9 @@ function NavBar(){
                 <li className="py-2"><Link to="/contact" className="text-white">Contact</Link></li>
             </ul>
             ) : null}
-
         </nav>   
+        <hr className="h-[2px] bg-white" />
+        </>
     )
 }
 

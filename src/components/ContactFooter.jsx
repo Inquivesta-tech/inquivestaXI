@@ -15,7 +15,7 @@ const ContactFooter = () => {
       <div className="w-full h-[10rem] flex flex-col items-center justify-start">
         <span className="w-full h-[2px] bg-white"></span>
         <div className="flex w-full h-[calc(100%-2px)]">
-          <div className="w-1/4 p-11 h-full flex flex-col items-center justify-center">
+          <div className="hidden md:flex w-1/4 p-11 h-full flex-col items-center justify-center">
             <p className="w-full">Reach Us at:</p>
             <p className="w-full">
               {" "}
@@ -32,10 +32,10 @@ const ContactFooter = () => {
               +91 00000 00000
             </p>
           </div>
-          <div className="text-white text-2xl font-bold w-2/4 h-full flex items-center justify-center">
+          <div className="w-full md:w-2/4 text-white text-2xl font-bold h-full flex items-center justify-center">
             <LogoLink />
           </div>
-          <div className="w-1/4 h-full flex flex-col items-center justify-center">
+          <div className="hidden md:flex w-1/4 h-full flex-col items-center justify-center">
             Follow Us on:
             <div className="flex w-1/3 items-center justify-around">
               <a href="" target="_blank"><FontAwesomeIcon icon={faInstagram} /> </a>

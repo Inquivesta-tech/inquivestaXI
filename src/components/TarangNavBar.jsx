@@ -42,9 +42,9 @@ function TarangNavBar({ isTarangLanding }){
             {/* Mob Nav */}
             {isMenuOpen ? (
                 <ul className="grid md:hidden justify-items-center">
-                <li className="py-2"><a to="#sponsors" className="text-white">Sponsors</a></li>
-                <li className="py-2"><Link to="tarang/event" className="text-white">Events</Link></li>
-                <li className="py-2"><Link to="tarang/register" className="text-white">Register</Link></li>
+                <li className="py-2"><Link to="/tarang/#sponsors" className="text-white">Sponsors</Link></li>
+                <li className="py-2"><Link to="/tarang/events" className="text-white">Events</Link></li>
+                <li className="py-2"><Link to="/tarang/register" className="text-white">Register</Link></li>
             </ul>
             ) : null}
 
