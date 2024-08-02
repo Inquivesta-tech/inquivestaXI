@@ -26,9 +26,9 @@ function TarangNavBar({ isTarangLanding }){
                     <Link to="/tarang" className="h-16">TARANG</Link>
                 </div>
                 <ul className="hidden md:flex space-x-4">
-                    <li><a href={isTarangLanding ? "#sponsors" : "/tarang/#sponsors"} className="text-white">Sponsors</a></li>
+
                     <li><Link to="/tarang/events" className="text-white">Events</Link></li>
-                    <li><Link to="/tarang/register" className="text-white">Register</Link></li>
+                    <li><a href={isTarangLanding ? "#about" : "/tarang/#about"} className="text-white">About</a></li>
                 </ul>
 
                 <div className="md:hidden">
