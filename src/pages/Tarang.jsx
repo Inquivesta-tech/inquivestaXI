@@ -24,7 +24,7 @@ const Tarang = () => {
 //     })
 // }, [])
 
-  const [scrollVal, setScrollVal] = useState();
+  const [scrollVal, setScrollVal] = useState(0);
 
   window.addEventListener('scroll', () => {
     setScrollVal(window.scrollY / window.innerHeight);
