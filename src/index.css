@@ -191,7 +191,7 @@ html {
 
 .events-grid {
     padding: 5rem;
-    height: calc(100vh - 16.25rem);
+    height: calc(100vh - 17rem);
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
