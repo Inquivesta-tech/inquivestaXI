@@ -12,7 +12,7 @@ import LogoLink from "./LogoLink";
 const ContactFooter = () => {
   return (
     <>
-      <div className="w-full h-[10rem] flex flex-col items-center justify-start">
+      <div className="w-full h-[10rem] flex flex-col items-center justify-start bg-black">
         <span className="w-full h-[2px] bg-white"></span>
         <div className="flex w-full h-[calc(100%-2px)]">
           <div className="hidden md:flex w-1/4 p-11 h-full flex-col items-center justify-center">
