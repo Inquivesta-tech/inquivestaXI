@@ -15,6 +15,10 @@ function TarangNavBar({ isTarangLanding }){
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen)
     }  
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    }
     
     return (
         <>
@@ -23,7 +27,9 @@ function TarangNavBar({ isTarangLanding }){
             {/* Main Nav */}
             <div className="flex items-center justify-between">
                 <div className="text-white text-2xl font-bold"> 
-                    <Link to="/tarang" className="h-16">TARANG</Link>
+                    <Link to="/tarang" className="h-16">
+                        <img className="h-12" src="/tarang_logo.png" onClick={scrollToTop}></img>
+                    </Link>
                 </div>
                 <ul className="hidden md:flex space-x-4">
 
@@ -49,7 +55,6 @@ function TarangNavBar({ isTarangLanding }){
             ) : null}
 
         </nav>   
-        <hr className="h-[2px] bg-white" />
         </>
     )
 }
