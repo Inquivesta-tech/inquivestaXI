@@ -27,14 +27,15 @@ function TarangNavBar({ isTarangLanding }){
             {/* Main Nav */}
             <div className="flex items-center justify-between">
                 <div className="text-white text-2xl font-bold"> 
-                    <Link to="/tarang" className="h-16">
-                        <img className="h-12" src="/tarang_logo.png" onClick={scrollToTop}></img>
+                    <Link to="/" className="h-16">
+                        <img className="h-12" src="/inq11-txtonly.png" onClick={scrollToTop}></img>
                     </Link>
                 </div>
                 <ul className="hidden md:flex space-x-4">
 
-                    <li><Link to="/tarang/events" className="text-white">Events</Link></li>
-                    <li><a href={isTarangLanding ? "#about" : "/tarang/#about"} className="text-white">About</a></li>
+                    <li><Link to="/events" className="text-white">Events</Link></li>
+                    <li><a href={isTarangLanding ? "#past-sponsors" : "/#past-sponsors"} className="text-white">Past Sponsors</a></li>
+                    <li><a href={isTarangLanding ? "#about" : "/#about"} className="text-white">About</a></li>
                 </ul>
 
                 <div className="md:hidden">
@@ -48,9 +49,9 @@ function TarangNavBar({ isTarangLanding }){
             {/* Mob Nav */}
             {isMenuOpen ? (
                 <ul className="grid md:hidden justify-items-center">
-                <li className="py-2"><Link to="/tarang/#sponsors" className="text-white">Sponsors</Link></li>
-                <li className="py-2"><Link to="/tarang/events" className="text-white">Events</Link></li>
-                <li className="py-2"><Link to="/tarang/register" className="text-white">Register</Link></li>
+                <li className="py-2"><Link to="/events" className="text-white">Events</Link></li>
+                <li className="py-2"><a href={isTarangLanding ? "#past-sponsors" : "/tarang/#past-sponsors"} className="text-white">Past Sponsors</a></li>
+                <li className="py-2"><a href={isTarangLanding ? "#about" : "/tarang/#about"} className="text-white">About</a></li>
             </ul>
             ) : null}
 
