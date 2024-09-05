@@ -135,7 +135,7 @@ html {
 .tarang-about {
     position: relative;
     /* background: url("/inq14-crowd.jpg"); */
-    background-image: url("/inq14-crowd.jpg");
+    background-image: url("/crowd-compressed.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 30%;

@@ -5,6 +5,7 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faX } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
+import LogoLink from "./LogoLink"
 
 const navMenuOpen = <FontAwesomeIcon icon={faBars} />
 const navMenuClose = <FontAwesomeIcon icon={faX} />
@@ -27,8 +28,9 @@ function TarangNavBar({ isTarangLanding }){
             {/* Main Nav */}
             <div className="flex items-center justify-between">
                 <div className="text-white text-2xl font-bold"> 
+                    {/* <LogoLink /> */}
                     <Link to="/" className="h-16">
-                        <img className="h-12" src="/inq11-txtonly.png" onClick={scrollToTop}></img>
+                        <img className="h-12" src="/inq11-txtonly-compressed.png" onClick={scrollToTop}></img>
                     </Link>
                 </div>
                 <ul className="hidden md:flex space-x-4">
