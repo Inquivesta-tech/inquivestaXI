@@ -2,6 +2,8 @@ import { React, useEffect, useState } from "react";
 import TarangNavBar from "../components/TarangNavBar";
 // import Sponsors from "../components/Sponsors";
 import ContactFooter from "../components/ContactFooter";
+import PastSponsors from "../components/PastSponsors";
+import PastHighlights from "../components/PastHighlights";
 import Waves from "../components/Waves";
 
 
@@ -35,19 +37,40 @@ const Tarang = () => {
       <TarangNavBar isTarangLanding={true}/>
       <section className="tarang-hero">
         <div className="hero-img">
-        <h1 className="text-3xl">IISER Kolkata presents</h1>
-          <img src="/tarang_logo.png" alt="Tarang Logo" />
-        <h1 className="text-2xl"> a Cultural Meeting of the Kalyani Innovation Network </h1>
-        <h1 className="text-2xl my-8"> 9th & 10th November, 2024</h1>
+        <h1 className="text-3xl hero-head">IISER Kolkata presents</h1>
+          <img src="/inq11-logo-dark-cropped.png" alt="Tarang Logo" />
+        <h1 className="text-2xl hero-subhead"> The annual Science fest of IISER Kolkata</h1>
+        <h1 className="text-2xl my-8 hero-dates"> 9th, 10th and 11th February, 2025</h1>
         {/* <a className="scroll-btn" href="#about"><span></span><span></span><span></span>Scroll</a> */}
         </div>
         <Waves />
       </section>
-      <div id="about" className="flex items-center justify-center h-[calc(100vh-10rem)] z-15 tarang-about">
-        <span className={scrollVal <= 0.80 ? "white-overlay" : "white-overlay scale0"}></span>
-        <div className="w-3/5 h-fit flex items-center justify-center flex-col border-solid border-2 border-inherit rounded-3xl p-5 tarang-deets">
-            <h1 className="text-5xl p-5">What is Tarang?</h1>
-            <p className="text-lg p-5">Tarang is the science-based cultural meet of the Kalyani Innovation Network (KIN). The inaugural edition of the meet is scheduled this year, at IISER Kolkata. The institutes of the network shall compete in a tournament style format, for points. At the end of the meet, the institute with the most points shall be crowned champions. Scheduled on 9 and 10 November, there will be nine total events: Dance, Drama, Battle of Bands, Debate, JAM, Photography, Story Writing, Quiz and Canvas Painting. We hope to see you all on campus, participating or just chilling! There will be plenty of food stalls and attractions for you to enjoy!</p>
+      <div id="past-sponsors" className="flex items-center justify-center h-screen w-full bg-white">
+        <PastSponsors />
+      </div>
+      <div id="past-highlights" className="flex items-center justify-center h-screen w-full bg-black">
+        <PastHighlights />
+      </div>
+      <div id="about" className="flex items-center justify-center h-[calc(100vh-15rem)] z-15 tarang-about">
+        <div className="h-fit flex items-center justify-center flex-col p-5 tarang-deets">
+            <h1 className="text-5xl p-5">About Inquivesta</h1>
+            <p className="text-lg px-5 py-2">
+              Inquivesta, which is hosted by the students of IISER Kolkata, is the
+              first and one of the largest science college festivals in India. It was created
+              in 2011 with the aim of promoting science in an entertaining and engaging
+              manner to a wider audience. Since then, Inquivesta has successfully
+              organized ten editions.</p>
+
+              <p  className="text-lg px-5 py-2">These editions have included a variety of events that showcase
+              science, technology, and innovation, as well as workshops, guest lectures,
+              celebrity appearances, and engaging competitions in fine arts, sports, and
+              adventure. </p>
+
+              <p className="text-lg px-5 py-2">Inquivesta attracts a diverse audience ranging from school and
+              college students to working professionals. Inquivesta has experienced over
+              2000 participants, and footfalls of over 8000, in previous editions. It truly
+              creates a very festive atmosphere with the star studded performances,
+              creative events and enthusiastic participation.</p>
         </div>
       </div>
       {/* <Sponsors /> */}

@@ -12,10 +12,10 @@ import LogoLink from "./LogoLink";
 const ContactFooter = () => {
   return (
     <>
-      <div className="w-full h-[10rem] flex flex-col items-center justify-start bg-black">
-        <span className="w-full h-[2px] bg-white"></span>
-        <div className="flex w-full h-[calc(100%-2px)]">
-          <div className="hidden md:flex w-1/4 p-11 h-full flex-col items-center justify-center">
+      <div className="w-full h-[10rem] flex flex-col items-center justify-start bg-black footer">
+        <span className="w-full h-[2px] bg-white footer-line"></span>
+        <div className="flex w-full h-[calc(100%-2px)] footer-content">
+          <div className="flex w-1/4 p-11 h-full flex-col items-center justify-center footer-stuff">
             <p className="w-full">Reach Us at:</p>
             <p className="w-full">
               {" "}
@@ -32,13 +32,13 @@ const ContactFooter = () => {
               +91 00000 00000
             </p>
           </div>
-          <div className="w-full md:w-2/4 text-white text-2xl font-bold h-full flex items-center justify-center">
+          <div className="w-2/4 text-white text-2xl font-bold h-full flex items-center justify-center footer-logo">
             <LogoLink />
           </div>
-          <div className="hidden md:flex w-1/4 h-full flex-col items-center justify-center">
+          <div className="flex w-1/4 h-full flex-col items-center justify-center footer-stuff">
             Follow Us on:
-            <div className="flex w-1/3 items-center justify-around">
-              <a href="" target="_blank"><FontAwesomeIcon icon={faInstagram} /> </a>
+            <div className="flex w-1/3 items-center justify-around ">
+              <a href="https://www.instagram.com/inquivesta_iiserk/" target="_blank"><FontAwesomeIcon icon={faInstagram} /> </a>
               <a href="" target="_blank"><FontAwesomeIcon icon={faTwitter} /> </a>
               <a href="" target="_blank"><FontAwesomeIcon icon={faFacebook} /> </a>
             </div>

@@ -12,6 +12,8 @@
     /* --bg: rgba(125,0,255, 1); */
     --accent-color: white;
     --bg: black;
+    --logo-light: #63bec1;
+    --logo-dark: #4a2778;
 }
 *{
     margin: 0;
@@ -41,9 +43,16 @@ html {
 
 .tarang-hero img {
     /* z-index: 5; */
-    max-width: 50%;
-    max-height: 60%;
+    max-width: 60%;
+    max-height: 80%;
+    /* z-index: -1; */
 }
+/* .hero-head {
+    margin-bottom: -5rem;
+}
+.hero-subhead {
+    margin-top: -10rem;
+} */
 .hero-img {
     position: fixed;
     top: 1rem;
@@ -54,6 +63,7 @@ html {
     align-items: center;
     flex-direction: column;
 }
+
 
 .sec {
     padding: 100px;
@@ -124,8 +134,41 @@ html {
 }
 .tarang-about {
     position: relative;
-    background: url("/crowd-highres.jpg");
+    /* background: url("/inq14-crowd.jpg"); */
+    background-image: url("/inq14-crowd.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    /* background-position: 40% 50%; */
     transition: 500ms ease-in-out;
+}
+
+.tarang-deets {
+    width: 95%;
+    max-width: 100ch;
+    background-color: rgba(0, 0, 0, 0.1); 
+    backdrop-filter: blur(20px);
+    border: 2px solid var(--logo-dark);
+    border-radius: 1.5rem;
+    /* position: relative;
+    box-sizing: border-box;
+    background-clip: padding-box; */
+
+}
+/* .tarang-deets::before {
+    content: ' ';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: -2px;
+    z-index: -1;
+    border-radius: inherit;
+    background: linear-gradient(to right, var(--logo-dark), var(--logo-light));
+} */
+.tarang-deets h1 {
+    color: var(--logo-light);
 }
 
 .white-overlay{
@@ -142,53 +185,42 @@ html {
 .scale0 {
     opacity: 0;
 }
-
-.tarang-deets {
-    background-color: rgba(0, 0, 0, 0.1); 
-    backdrop-filter: blur(20px);
+.highlights h1 {
+    padding: 1rem;
+    color: var(--logo-light);
 }
-.scroll-btn {
-    margin-top: 5rem;
-    position: relative;
-    padding-top: 80px;
-}
-.scroll-btn span {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 24px;
-    height: 24px;
-    margin-left: -12px;
-    border-left: 1px solid #fff;
-    border-bottom: 1px solid #fff;
-    transform: rotate(-45deg);
-    animation: sdb07 2s infinite;
-    opacity: 0;
-    box-sizing: border-box;
-}
-.scroll-btn span:nth-of-type(1) {
-    animation-delay: 0s;
-}
-.scroll-btn span:nth-of-type(2) {
-    top: 16px;
-    animation-delay: .15s;
-}
-.scroll-btn span:nth-of-type(3) {
-    top: 32px;
-    animation-delay: .3s;
-}
-@keyframes sdb07 {
-    0% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
+.highlights img { 
+    max-width: 90%;
+    max-height: 60%;
 }
 
+.highlights button {
+    padding: 1rem;
+    color: var(--logo-dark);
+    background-color: var(--logo-light);
+    border-radius: 50%;
+    height: 3rem;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer-line {
+    background-color: var(--logo-light);
+}
+.footer-content {
+    color: var(--logo-light);
+}
+
+nav a {
+    color: var(--logo-light) !important;
+    transition: 100ms ease-in-out;
+}
+
+nav a:hover {
+    color: var(--logo-dark) !important;
+}
+/* Events Page */
 .events-grid {
     padding: 5rem;
     height: calc(100vh - 17rem);
@@ -296,4 +328,59 @@ html {
 
 .event-card img {
     height: 50%;
+}
+
+@media (max-width: 860px) {
+    .tarang-hero img {
+        max-width: 100%;
+        max-height: 80%;
+    }
+    .hero-head {
+        font-size: large;
+    }
+
+    .hero-subhead {
+        font-size: medium;
+    }
+
+    .hero-dates {
+        font-size: medium;
+    }
+
+    .highlights h1 {
+        font-size: large;
+    }
+    .tarang-about {
+        height: 100vh;
+        background-position: 70% 50%;
+    }
+    .tarang-deets h1 {
+        font-size: 1.25rem;
+        padding-bottom: 3px;
+    }
+    .tarang-deets p {
+        font-size: 0.85rem;
+        padding: 5px 0px;
+    }
+    /* .footer {
+        height: 25vh;
+    } */
+    .footer-content {
+        /* justify-content: center;
+        align-items: center; */
+        font-size: 0.75em;
+        margin: 0;
+        width: 100%;
+        padding-left: 1rem;
+        justify-content: space-between;
+    }
+    .footer-stuff { 
+        width: 50%;
+        padding: 5px;
+        /* align-items: center;
+        justify-content: center; */
+    }
+    .footer-logo {
+        display: none;
+    }
 }
