@@ -24,7 +24,6 @@ const PastHighlights = () => {
         "DSC06510.JPG",
         "IMG_7307.JPG",
         "IMG_2377.JPG",
-        "IMG_4608.PNG",
 
     ];
     const [imgIndex, setimgIndex] = useState(0);
