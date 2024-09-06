@@ -30,7 +30,7 @@ function TarangNavBar({ isTarangLanding }){
                 <div className="text-white text-2xl font-bold"> 
                     {/* <LogoLink /> */}
                     <Link to="/" className="h-16">
-                        <img className="h-12" src="/inq11-txtonly-compressed.png" onClick={scrollToTop}></img>
+                        <img className="h-12" src="/inq11-txtonly-webpv.webp" onClick={scrollToTop}></img>
                     </Link>
                 </div>
                 <ul className="hidden md:flex space-x-4">
@@ -52,8 +52,8 @@ function TarangNavBar({ isTarangLanding }){
             {isMenuOpen ? (
                 <ul className="grid md:hidden justify-items-center">
                 <li className="py-2"><Link to="/events" className="text-white">Events</Link></li>
-                <li className="py-2"><a href={isTarangLanding ? "#past-sponsors" : "/tarang/#past-sponsors"} className="text-white">Past Sponsors</a></li>
-                <li className="py-2"><a href={isTarangLanding ? "#about" : "/tarang/#about"} className="text-white">About</a></li>
+                <li className="py-2"><a href={isTarangLanding ? "#past-sponsors" : "/#past-sponsors"} className="text-white">Past Sponsors</a></li>
+                <li className="py-2"><a href={isTarangLanding ? "#about" : "/#about"} className="text-white">About</a></li>
             </ul>
             ) : null}
 

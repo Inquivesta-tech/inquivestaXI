@@ -38,7 +38,7 @@ const Tarang = () => {
       <section className="tarang-hero">
         <div className="hero-img">
         <h1 className="text-3xl hero-head">IISER Kolkata presents</h1>
-          <img src="/inq11-compressed.png" alt="Tarang Logo" loading="lazy"/>
+          <img src="/inq11-webpv.webp" alt="Tarang Logo" loading="lazy"/>
         <h1 className="text-2xl hero-subhead"> The annual Science fest of IISER Kolkata</h1>
         <h1 className="text-2xl my-8 hero-dates"> 9th, 10th and 11th February, 2025</h1>
         {/* <a className="scroll-btn" href="#about"><span></span><span></span><span></span>Scroll</a> */}

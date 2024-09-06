@@ -8,7 +8,7 @@ const LogoLink = () => {
 
   return (
     <Link to="/">
-      <img src="/inq11-txtonly-compressed.png" className="h-16" onClick={scrollToTop} />
+      <img src="/inq11-txtonly-webpv.webp" className="h-16" onClick={scrollToTop} />
     </Link>
   );
 };

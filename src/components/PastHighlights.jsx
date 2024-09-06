@@ -19,11 +19,11 @@ const preloadImages = (imagesArray) => {
 const PastHighlights = () => {
     const [ImagesPreloaded, setImagesPreloaded] = useState(false);
     const pastImgs = [
-        "DSC_0314.JPG",
-        "DSC_0976.JPG",
-        "DSC06510.JPG",
-        "IMG_7307.JPG",
-        "IMG_2377.JPG",
+        "DSC_0314.webp",
+        "DSC_0976.webp",
+        "DSC06510.webp",
+        "IMG_7307.webp",
+        "IMG_2377.webp",
 
     ];
     const [imgIndex, setimgIndex] = useState(0);
