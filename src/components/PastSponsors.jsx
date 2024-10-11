@@ -1,9 +1,21 @@
 import React from 'react'
 
-const PastSponsors = () => {
+const PastSponsors = ({ sponsors }) => {
   return (
-    <h1 className='text-lg text-black'>TODO: Past Sponsors Mosaic</h1>
-  )
+    <div>
+      <h1 id="past-sponsors" className='text-4xl text-black text-center mt-10'>Past Sponsors</h1>
+      <div className="sponsor-grid">
+        {sponsors.map((sponsor, index) => (
+          <div key={index} className={`sponsor-tile ${sponsor.size}`}>
+            <img src={`/sponsors/${sponsor.logo}`} alt={`Sponsor ${index}`} className="sponsor-image" />
+            <div className="sponsor-info">
+              <h3>{sponsor.name}</h3>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
 export default PastSponsors
