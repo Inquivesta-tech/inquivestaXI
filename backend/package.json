@@ -18,8 +18,11 @@
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "firebase": "^11.2.0",
-    "netlify-lambda": "^2.0.16",
+    "firebase-admin": "^13.0.2",
+    "forever": "^4.0.3",
+    "nodemailer": "^6.9.16",
     "nodemon": "^3.1.9",
+    "qrcode": "^1.5.4",
     "serverless-http": "^3.2.0"
   },
   "devDependencies": {

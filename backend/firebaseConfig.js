@@ -1,18 +1,15 @@
 const { initializeApp } = require("firebase/app");
 const { getDatabase } = require("firebase/database");
+const admin = require('firebase-admin');
 require("dotenv").config();
 
-const firebaseConfig = {
-  apiKey: process.env.VITE_API_KEY,
-  authDomain: "inquivesta-xi.firebaseapp.com",
-  projectId: "inquivesta-xi",
-  storageBucket: "inquivesta-xi.firebasestorage.app",
-  messagingSenderId: process.env.VITE_MSG_ID,
-  appId: process.env.VITE_APP_ID,
-  databaseURL: process.env.VITE_DB_URL,
-};
+var serviceAccount = require("./fbfirestoreconfigs.json");
 
-const firebaseApp = initializeApp(firebaseConfig);
-const database = getDatabase(firebaseApp);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: process.env.DB_URL
+});
+
+const database = admin.firestore();
 
 module.exports = { database };
