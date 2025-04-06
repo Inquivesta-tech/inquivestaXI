@@ -4,45 +4,51 @@ const { database } = require("../firebaseConfig");
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  // try {
-  //   const dbRef = ref(database, "key1");
-  //   const snapshot = await get(dbRef);
-  //   if (snapshot.exists()) {
-  //     res.status(200).json(snapshot.val());
-  //   } else {
-  //     res.status(404).json({ message: "No data found" });
-  //   }
-  // } catch (error) {
-  //   res.status(500).json({ error: error.message });
-  // }
-  res.send("Nice try Diddy...");
+const nodemailer = require("nodemailer");
+const qr = require("qrcode");
+require("dotenv").config()
+
+const transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.EMAIL,
+    pass: process.env.PASS,
+  },
 });
 
+router.get("/", async (req, res) => {
+	console.log(req.query);
+    let img = await qr.toDataURL(req.query.qrcode ? req.query.qrcode : "https://www.youtube.com/watch?v=xvFZjo5PgG0");
+	res.send(`<h1>Download this QR Code</h1> <br/> <img src='${img}'style='width: 500px; max-width: 80vw;'/>`);
+});
 router.post("/", async (req, res) => {
-  try {
+	try {
+		const eventName = req.body["event"];
+		delete req.body["event"];
+		console.log(req.body);
+		const now = new Date().getTime();
+		const docRef = await database.collection(eventName).add({...req.body, ["timestamp"]: now});
+		console.log(docRef.id);
+		if (req.body.utr) {
+			let img = await qr.toDataURL(req.body.utr);
+			const info = await transporter.sendMail({
+			    from: process.env.EMAIL, // sender address
+			    to: req.body.email, // list of receivers
+			    replyTo: process.env.EMAIL,
+			    subject: "Event Ticket for "+eventName, // Subject line
+			    attachDataUrls: true,
+			    html: "Thanks a lot for registering for "+eventName+". Below is your Event Ticket. <br/> <img style='width: 200px; height: 200px;' src='"+img+"'/>"
+			});
+			res.status(201).json({message: "Registration Successful!! Check Your Email for the Event Ticket. Also, Download the QR Code just to be safe :)", utr: req.body.utr});
+		} else {
+			res.status(201).json({message: "Registration Successful!!"});
+		}
+        // console.log(img)
 
-    const eventName = req.body["event"];
-    console.log(eventName)
-    delete req.body["event"];
-    const countRef = ref(database, `/events/${eventName}/count`);
-    var i = 0;
-
-    onValue(countRef, (snapshot) => {
-          const value = snapshot.val();
-          i = value ? Number(value.number) + 1 : 0;
-        });
-    // console.log(i)
-    const dbRef = ref(database, `/events/${eventName}/entry-${i}`);
-    // console.log(i)
-    await set(dbRef, req.body);
-    await set(countRef, {number : i});
-    res.status(201).json({ message: "Registration successful" });
-  } 
-  catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-
+        // console.log("Message sent: %s", info.messageId);
+	} catch (error) {
+		res.status(500).json({error:error.message})
+	}
 });
 
 module.exports = router;
